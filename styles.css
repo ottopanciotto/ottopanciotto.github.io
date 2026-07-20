@@ -182,7 +182,7 @@ h1 span { color: var(--red); text-shadow: 4px 4px 0 var(--yellow); }
 }
 
 .polaroid:hover { transform: rotate(1deg) scale(1.02); }
-.polaroid img { aspect-ratio: 2 / 3; object-fit: cover; filter: saturate(.92) contrast(1.04); }
+.polaroid img { aspect-ratio: 4 / 5; object-fit: cover; object-position: center 58%; filter: saturate(.92) contrast(1.04); }
 .polaroid figcaption { margin-top: .9rem; font-family: var(--hand); font-size: 1.1rem; text-align: center; }
 
 .tape {
