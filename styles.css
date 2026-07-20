@@ -317,7 +317,7 @@ h2 {
   transform: rotate(2.5deg);
 }
 
-.launch-photo img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+.launch-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .launch-photo figcaption { margin-top: .85rem; font: 1.05rem var(--hand); text-align: center; }
 
 .friends {
