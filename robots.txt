@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ottopanciotto.github.io/sitemap.xml
