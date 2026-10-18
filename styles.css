@@ -894,6 +894,30 @@ summary:focus-visible {
   line-height: 1.75;
   color: var(--muted);
 }
+.science-note {
+  margin: 0 20px 27px 43px;
+  padding: 20px;
+  border-left: 3px solid var(--blue);
+  background: var(--white);
+  font-size: 14px;
+  line-height: 1.75;
+}
+.science-note h3 {
+  font-size: 23px;
+  line-height: 1.15;
+}
+.science-note p {
+  margin-top: 14px;
+}
+.science-note a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  margin-top: 10px;
+  color: var(--blue);
+  text-underline-offset: 3px;
+}
 .find-me {
   padding-bottom: 65px;
 }

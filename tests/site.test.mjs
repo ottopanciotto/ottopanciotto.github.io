@@ -166,6 +166,19 @@ test("every image reserves its dimensions and has an alt attribute", () => {
   assert.doesNotMatch(css, /fonts\.googleapis\.com|@import/);
 });
 
+test("the floating-ice idea stays inside the native Science disclosure", () => {
+  const science = html.match(
+    /<details class="interest" id="science">([\s\S]*?)<\/details>/,
+  )?.[1];
+  assert.ok(science, "Science remains a native disclosure");
+  assert.match(science, /<strong>Science<\/strong\s*>/);
+  assert.match(science, /<h3>How much ice is hiding\?<\/h3>/);
+  assert.match(science, /Put one ice cube in a clear bowl of water/);
+  assert.match(science, /href="https:\/\/t\.me\/otto_panciotto_diary\/390"/);
+  assert.doesNotMatch(science, /<script|<iframe|\bonclick=/i);
+  assert.match(css, /\.science-note a\s*\{[^}]*min-height: 44px/s);
+});
+
 function luminance(hex) {
   const rgb = hex
     .match(/[\da-f]{2}/gi)
