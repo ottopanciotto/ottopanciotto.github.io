@@ -176,7 +176,20 @@ test("the floating-ice idea stays inside the native Science disclosure", () => {
   assert.match(science, /Put one ice cube in a clear bowl of water/);
   assert.match(science, /href="https:\/\/t\.me\/otto_panciotto_diary\/390"/);
   assert.doesNotMatch(science, /<script|<iframe|\bonclick=/i);
-  assert.match(css, /\.science-note a\s*\{[^}]*min-height: 44px/s);
+  assert.match(css, /\.science-note a,\s*\.story-note a\s*\{[^}]*min-height: 44px/s);
+});
+
+test("the moon-fruit scene is a labelled dream inside the Stories disclosure", () => {
+  const stories = html.match(
+    /<details class="interest" id="stories">([\s\S]*?)<\/details>/,
+  )?.[1];
+  assert.ok(stories, "Stories remains a native disclosure");
+  assert.match(stories, /<strong>Stories<\/strong\s*>/);
+  assert.match(stories, /<h3>The moon kept rolling away<\/h3>/);
+  assert.match(stories, /In a dream, I wanted the fruit inside the moon/);
+  assert.match(stories, /href="https:\/\/t\.me\/otto_panciotto_diary\/414"/);
+  assert.doesNotMatch(stories, /<script|<iframe|\bonclick=|Mom|Dad|Stockholm/i);
+  assert.match(css, /\.story-note a\s*\{[^}]*min-height: 44px/s);
 });
 
 function luminance(hex) {
