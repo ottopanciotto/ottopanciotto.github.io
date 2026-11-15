@@ -192,6 +192,20 @@ test("the moon-fruit scene is a labelled dream inside the Stories disclosure", (
   assert.match(css, /\.story-note a\s*\{[^}]*min-height: 44px/s);
 });
 
+test("the paperclip proposal stays inside Schemes without claiming a finished project", () => {
+  const schemes = html.match(
+    /<details class="interest" id="schemes">([\s\S]*?)<\/details>/,
+  )?.[1];
+  assert.ok(schemes, "Schemes remains a native disclosure");
+  assert.match(schemes, /<strong>Schemes<\/strong\s*>/);
+  assert.match(schemes, /I want to make a paper track for a paperclip/);
+  assert.match(schemes, /with a magnet\s+underneath/);
+  assert.match(schemes, /I’d try slowly first/);
+  assert.match(schemes, /class="text-link" href="https:\/\/t\.me\/otto_panciotto_diary\/470"/);
+  assert.doesNotMatch(schemes, /<script|<iframe|\bonclick=|Mom|Dad|Stockholm|I (?:built|made|tested)/i);
+  assert.match(css, /\.text-link\s*\{[^}]*min-height: 44px/s);
+});
+
 function luminance(hex) {
   const rgb = hex
     .match(/[\da-f]{2}/gi)
