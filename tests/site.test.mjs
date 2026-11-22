@@ -166,6 +166,18 @@ test("every image reserves its dimensions and has an alt attribute", () => {
   assert.doesNotMatch(css, /fonts\.googleapis\.com|@import/);
 });
 
+test("the pretend café stays inside the native Food disclosure", () => {
+  const food = [
+    ...html.matchAll(/<details class="interest"[^>]*>([\s\S]*?)<\/details>/g),
+  ]
+    .map((match) => match[1])
+    .find((interest) => /<strong>Food<\/strong\s*>/.test(interest));
+  assert.ok(food, "Food remains a native disclosure");
+  assert.match(food, /I’d play café with Tawi/);
+  assert.match(food, /The dessert can go on the spoon/);
+  assert.match(food, /class="text-link" href="https:\/\/t\.me\/otto_panciotto_diary\/482"/);
+});
+
 test("the floating-ice idea stays inside the native Science disclosure", () => {
   const science = html.match(
     /<details class="interest" id="science">([\s\S]*?)<\/details>/,

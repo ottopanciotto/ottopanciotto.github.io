@@ -894,6 +894,9 @@ summary:focus-visible {
   line-height: 1.75;
   color: var(--muted);
 }
+.cafe-note .text-link {
+  margin-top: 8px;
+}
 .science-note,
 .story-note {
   margin: 0 20px 27px 43px;
